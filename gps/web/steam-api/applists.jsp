@@ -4,6 +4,9 @@
 <%@ page import="java.net.URL" %>
 <%@ page import="org.json.simple.JSONObject" %>
 <%@ page import="java.util.stream.Collectors" %>
+<%@ page import="org.json.simple.parser.JSONParser" %>
+<%@ page import="org.json.simple.JSONArray" %>
+<%@ page import="org.json.simple.parser.ParseException" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +35,24 @@
     }
 
     String apiResponse = result.toString();
-    out.println(apiResponse);
+
+    JSONParser parser = new JSONParser();
+    JSONObject jsonObject = null;
+    try {
+        jsonObject = (JSONObject) parser.parse(apiResponse);
+    } catch (ParseException e) {
+        e.printStackTrace();
+    }
+
+    // JSON 객체에 접근하여 필요한 데이터 가져오기
+    JSONObject applist = (JSONObject) jsonObject.get("applist");
+    JSONArray apps = (JSONArray) applist.get("apps");
+    for (Object app : apps) {
+        JSONObject appObj = (JSONObject) app;
+        long appid = (long) appObj.get("appid");
+        String name = (String) appObj.get("name");
+        out.println("{appId : "+appid+", name : "+name+"}<br>");
+    }
 %>
 </body>
 </html>
