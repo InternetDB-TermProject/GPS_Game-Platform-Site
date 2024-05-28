@@ -1,10 +1,12 @@
 package payload.dto;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 public class AppDetailDTO {
     Long steam_appId;
     String name;
+    String type;
     Long required_age;
     String detailed_description;
     String header_image;
@@ -16,13 +18,18 @@ public class AppDetailDTO {
     public AppDetailDTO(Long steam_appId, JSONObject jsonObject) {
         this.steam_appId = steam_appId;
         this.name = (String)jsonObject.get("name");
-        this.required_age = (Long)jsonObject.get("required_age");
-        this.detailed_description = (String)jsonObject.get("detailed_description");
-        this.header_image = (String)jsonObject.get("header_image");
-        this.pc_requirements = (String)((JSONObject)jsonObject.get("pc_requirements")).get("minimum");
-        this.price = (Long)((JSONObject) jsonObject.get("price_overview")).get("final");
-        this.recommandations = (Long)((JSONObject)jsonObject.get("recommandations")).get("total");
-        this.release_date = (String)((JSONObject)jsonObject.get("release_date")).get("date");
+        this.type = (String)jsonObject.get("type");
+        this.required_age = (Long)jsonObject.get("required_age")==0L ? 0L : Long.parseLong((String)jsonObject.get("required_age"));
+        this.detailed_description = (String)jsonObject.getOrDefault("detailed_description", "");
+        this.header_image = (String)jsonObject.getOrDefault("header_image", "");
+        this.pc_requirements = jsonObject.get("pc_requirements") instanceof JSONArray ?
+                "" : (String)((JSONObject)jsonObject.get("pc_requirements")).getOrDefault("minimum", "");
+        this.price = (JSONObject)jsonObject.getOrDefault("price",null)==null ?
+                0L : (Long)((JSONObject)jsonObject.get("price")).getOrDefault("final",0L);
+        this.recommandations = (JSONObject)jsonObject.getOrDefault("recommandations",null)==null ?
+                0L : (Long)((JSONObject)jsonObject.get("recommandations")).getOrDefault("total",0L);
+        this.release_date = (JSONObject)jsonObject.getOrDefault("release_date", null)==null ?
+                "" : (String)((JSONObject)jsonObject.get("release_date")).getOrDefault("date", "");
     }
 
     public Long getSteam_appId() {
@@ -39,6 +46,14 @@ public class AppDetailDTO {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public Long getRequired_age() {
@@ -77,16 +92,17 @@ public class AppDetailDTO {
         return price;
     }
 
-    public void setPrice(Long price) {
-        this.price = price;
-    }
-
     public Long getRecommandations() {
         return recommandations;
     }
 
     public void setRecommandations(Long recommandations) {
         this.recommandations = recommandations;
+    }
+
+    public void setPrice(Long price) {
+        this.price = price;
+
     }
 
     public String getRelease_date() {

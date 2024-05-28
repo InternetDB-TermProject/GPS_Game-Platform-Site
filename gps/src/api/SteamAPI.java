@@ -4,13 +4,20 @@ import com.google.gson.Gson;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import payload.dto.AppDTO;
 import payload.dto.AppDetailDTO;
+import payload.dto.AppsDTO;
 import payload.response.AppListResponse;
+import util.DBUtil;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.List;
 
 public class SteamAPI {
     public static AppListResponse getAppList(){
@@ -67,9 +74,14 @@ public class SteamAPI {
         JSONObject loadApp = (JSONObject) jsonObject.get(String.valueOf(appId));
         JSONObject dataJsonObject = (JSONObject) loadApp.get("data");
 
-        AppDetailDTO appDetailDTO = new AppDetailDTO(appId, dataJsonObject);
-        return appDetailDTO;
+        if(dataJsonObject==null) {
+            return null;
+        }
+        else{
+            AppDetailDTO appDetailDTO = new AppDetailDTO(appId, dataJsonObject);
+            return appDetailDTO;
+        }
     }
-    //refreshAppData : db 삭제후 다시 데이터 집어 넣음
-    //
+
+
 }
