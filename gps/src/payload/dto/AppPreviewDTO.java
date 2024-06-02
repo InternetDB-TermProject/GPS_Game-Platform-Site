@@ -1,8 +1,16 @@
 package payload.dto;
 
-public class AppDTO {
+public class AppPreviewDTO {
     Long appid;
     String name;
+
+    public AppPreviewDTO() {
+    }
+
+    public AppPreviewDTO(Long appid, String name) {
+        this.appid = appid;
+        this.name = name;
+    }
 
     public Long getAppid() {
         return appid;

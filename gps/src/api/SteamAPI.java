@@ -4,23 +4,16 @@ import com.google.gson.Gson;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import payload.dto.AppDTO;
 import payload.dto.AppDetailDTO;
-import payload.dto.AppsDTO;
-import payload.response.AppListResponse;
-import util.DBUtil;
+import payload.dto.SteamAppListResponse;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.List;
 
 public class SteamAPI {
-    public static AppListResponse getAppList(){
+    public static SteamAppListResponse getAppListFromSteam(){
         String apiUrl = "https://api.steampowered.com/ISteamApps/GetAppList/v2";
         StringBuilder result = new StringBuilder();
 
@@ -42,11 +35,11 @@ public class SteamAPI {
 
         String apiResponse = result.toString();
         Gson gson = new Gson();
-        AppListResponse appListResponse = gson.fromJson(apiResponse, AppListResponse.class);
+        SteamAppListResponse appListResponse = gson.fromJson(apiResponse, SteamAppListResponse.class);
         return appListResponse;
     }
 
-    public static AppDetailDTO getAppDetail(Long appId) throws ParseException {
+    public static AppDetailDTO getAppDetailFromSteam(Long appId) throws ParseException {
         String apiUrl = "https://store.steampowered.com/api/appdetails?appids="+appId+"&l=korean";
         StringBuilder result = new StringBuilder();
 

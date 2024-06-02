@@ -15,6 +15,19 @@ public class AppDetailDTO {
     Long recommandations;
     String release_date;
 
+    public AppDetailDTO(Long steam_appId, String name, String type, Long required_age, String detailed_description, String header_image, String pc_requirements, Long price, Long recommandations, String release_date) {
+        this.steam_appId = steam_appId;
+        this.name = name;
+        this.type = type;
+        this.required_age = required_age;
+        this.detailed_description = detailed_description;
+        this.header_image = header_image;
+        this.pc_requirements = pc_requirements;
+        this.price = price;
+        this.recommandations = recommandations;
+        this.release_date = release_date;
+    }
+
     public AppDetailDTO(Long steam_appId, JSONObject jsonObject) {
         this.steam_appId = steam_appId;
         this.name = (String)jsonObject.get("name");
