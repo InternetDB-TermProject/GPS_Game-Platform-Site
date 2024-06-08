@@ -1,10 +1,6 @@
-<%@ page import="payload.dto.SteamAppListResponse" %>
-<%@ page import="api.SteamAPI" %>
-<%@ page import="payload.dto.AppPreviewDTO" %>
-<%@ page import="payload.dto.AppPreviewsDTO" %>
 <%@ page import="repository.SteamRepository" %>
-<%@ page import="java.util.List" %>
 <%@ page import="payload.dto.AppDetailDTO" %>
+
 <!DOCTYPE html>
 <html>
 <head>

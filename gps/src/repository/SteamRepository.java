@@ -17,14 +17,14 @@ import java.util.List;
 
 public class SteamRepository {
     public static void updateData() throws SQLException {
-        boolean base = false;
         Connection conn = DBUtil.getConnection();
 
         SteamAppListResponse appListResponse = SteamAPI.getAppListFromSteam();
         AppPreviewsDTO appsDTO = appListResponse.getApplist();
         List<AppPreviewDTO> appsDTOList = appsDTO.getApps();
+        boolean base = false;
         for (AppPreviewDTO appDTO : appsDTOList) {
-            if (appDTO.getAppid() == 1817240) {
+            if (appDTO.getAppid() >= 1263200) {
                 base = true;
                 continue;
             }
