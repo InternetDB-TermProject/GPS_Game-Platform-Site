@@ -2,7 +2,7 @@ body {background-image: url("../resources/image/Battlefield_1_they_shall_not_pas
 #logoHeader {margin-left: -3%; margin-top: 10px; background-color:darkblue; width: 95%; position: absolute;}
 #logo {display: flex; align-items: center; justify-content: center;}
 #logo h1{letter-spacing: 5px;}
-#insertInfo {position: absolute; top: 30%; width: 95%; height:50%;}
+#insertInfo {position: absolute; top: 20%; width: 95%; height:50%;}
 #btnTrans {border-style: solid; border-color: #40E0D0; background-color: transparent; width: 90%; height: 50px; border-radius: 3px; font-family: 'SuseongDotum'; color:#40E0D0; margin-bottom: 20px;}
 #btnTrans:hover {border-style: solid; border-color: #40E0D0; background-color: #40E0D0; width: 90%; height: 50px; border-radius: 3px; font-family: 'SuseongDotum'; color:white;}
 #inputEmail {background-image: url("../resources/image/mail.png"); background-repeat: no-repeat; background-size: 4% 50%;  background-position: 0px 10px;}
