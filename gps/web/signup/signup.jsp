@@ -15,7 +15,7 @@
 	<div id="signupArea">
 		<div id="logoHeader">
 			<div id="logo">
-			<img src="./Alogo.png" alt="이미지 없음" width="100" height="100"><h1>GPS</h1>
+			<img src="../resources/image/Alogo.png" alt="이미지 없음" width="100"><h1>GPS</h1>
 			</div>
 		</div>
 		<div id="insertInfo">

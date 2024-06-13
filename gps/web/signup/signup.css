@@ -1,14 +1,14 @@
-body {background-image: url("./Battlefield_1_they_shall_not_pass_dlc-2017_Game_HD_Wallpaper_1366x768.jpg"); font-family: 'SuseongDotum'; background-size: 1920px 1080px;}
+body {background-image: url("../resources/image/Battlefield_1_they_shall_not_pass_dlc-2017_Game_HD_Wallpaper_1366x768.jpg"); font-family: 'SuseongDotum'; background-size: 1920px 1080px;}
 #logoHeader {margin-left: -3%; margin-top: 10px; background-color:darkblue; width: 95%; position: absolute;}
 #logo {display: flex; align-items: center; justify-content: center;}
 #logo h1{letter-spacing: 5px;}
 #insertInfo {position: absolute; top: 30%; width: 95%; height:50%;}
 #btnTrans {border-style: solid; border-color: #40E0D0; background-color: transparent; width: 90%; height: 50px; border-radius: 3px; font-family: 'SuseongDotum'; color:#40E0D0; margin-bottom: 20px;}
 #btnTrans:hover {border-style: solid; border-color: #40E0D0; background-color: #40E0D0; width: 90%; height: 50px; border-radius: 3px; font-family: 'SuseongDotum'; color:white;}
-#inputEmail {background-image: url("./mail.png"); background-repeat: no-repeat; background-size: 4% 50%;  background-position: 0px 10px;}
-#inputPwd {background-image: url("./padlock.png"); background-repeat: no-repeat; background-size: 4% 50%; background-position: 0px 10px;}
-#userName {background-image: url("./user.png"); background-repeat: no-repeat; background-size: 4% 50%; background-position: 0px 10px;}
+#inputEmail {background-image: url("../resources/image/mail.png"); background-repeat: no-repeat; background-size: 4% 50%;  background-position: 0px 10px;}
+#inputPwd {background-image: url("../resources/image/padlock.png"); background-repeat: no-repeat; background-size: 4% 50%; background-position: 0px 10px;}
+#userName {background-image: url("../resources/image/user.png"); background-repeat: no-repeat; background-size: 4% 50%; background-position: 0px 10px;}
 .input {border: none; border-bottom-style: solid; border-bottom-color: gray; width: 80%; height: 10%;margin-bottom: 10%; padding-left: 60px; font-family: 'SuseongDotum';}
 .inputCheck {width: 20px; height: 20px; position: relative; top: 3px; margin-right: 10px; margin-bottom: 5%;}
 #signupArea {position: absolute; left: 25%; top: 8%; background-color: 	white; padding-left: 3%; color: #B0C4DE; width: 50%; height: 100%; opacity: 0.8; overflow-y: scroll; overflow-x: hidden; margin-bottom: 100px;}
-#inputPhone {background-image: url("./phone.png"); background-repeat: no-repeat; background-size: 3% 50%; background-position: 0px 10px;}
+#inputPhone {background-image: url("../resources/image/phone.png"); background-repeat: no-repeat; background-size: 3% 50%; background-position: 0px 10px;}
