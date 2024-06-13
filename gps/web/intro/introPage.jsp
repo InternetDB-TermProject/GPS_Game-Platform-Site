@@ -18,7 +18,7 @@
 	<h1 class="focus-in-contract">안녕하세요</h1>
  	<h1 class="focus-in-contract1">이 사이트를 처음 이용하시나요?</h1>
  	<a href="../signup/signup.jsp"><input type="button" value="네, 처음입니다" id="btnYes"></a>
- 	<a href="login.sign"><input type="button" value="아니요, 이미 계정이 있습니다" id="btnNo"></a>
+ 	<a href="../login/login.jsp"><input type="button" value="아니요, 이미 계정이 있습니다" id="btnNo"></a>
 	<div id="slideCard"></div>
 </div>
 </form>
