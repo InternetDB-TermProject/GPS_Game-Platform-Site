@@ -1,0 +1,42 @@
+body {background-color: #d0d8e2;}
+   #icons {position: absolute; left: 85%; top: 10px; width: 250px; height: 50px;}
+   #icons img {display: inline; margin-right: 10px;}
+   #searchIn {position: absolute; left: -400px; width: 350px; height: 40px; border-radius: 50px; top: 10px; background-image: url("../resources/image/search.png"); background-size: 10% 80%; background-repeat: no-repeat; background-position-y: center; padding-left: 50px; padding-right: 40px; border-width: 1px;}
+   #searchIn {border-width: 1px;}
+   #bottomText {position: absolute; top: 2200px; font-size:small; text-align: center; width: 100%;}
+   #freeArea {position: absolute; top: 1400px; left: 45px; width: 210px; height: 60px; border-bottom-style: solid; border-bottom-width: 5px;}
+   #freeTagCard {position: absolute; top: 1500px; left: 45px; width: 100%;}
+   #famousArea {position: absolute; top: 700px; left: 45px; width: 210px; height: 60px; border-bottom-style: solid; border-bottom-width: 5px;}
+   #famousTagCard {position: absolute; top: 800px; left: 45px; width: 100%;}
+   .card {display: inline-block; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); max-width: 300px; margin: left; text-align: center; font-family: arial; margin-right: 1%; margin-left: 3%;}
+   .cardImageArea {width: 289px; height: 345px;}
+   .cardImageArea:hover {animation-name: chooseCard; animation-duration: 0.7s; animation-fill-mode: forwards;}
+   @keyframes chooseCard {0% {background-color: rgba(72,209,204,0);} 100%{background-color: rgba(72,209,204,0.7);}}
+   .price {color: grey; font-size: 22px;}
+   .card > a >img {width: 289px; height: 345px;}
+   * {margin: 0; padding: 0;}
+   nav li {list-style-type: none;}
+   #Category {position: fixed; width: 100%; height: 12%; top: 10%; background-color: white; z-index: 2;}
+   #Category h4 {position: absolute; left: 30px; top: 15px; color: #48D1CC;}
+   #BorderLine {height: 100%; width: 8%; margin-left: 18px;}
+   #list {position: absolute; top: 88px; width: 100%; height: 0%; left: -1px; visibility: hidden;}
+   #list ul {height: 50%; position: absolute; top: 100px; list-style-type: none; width: 100%;}
+   #BorderLine:hover > #list {position: absolute; top: 88px; width: 100%; left: -1px; animation-name: ht; animation-duration: 0.5s; animation-fill-mode: forwards; background-color: rgba(255, 255, 255, 0.9); visibility: visible;}
+   #BorderLine:hover > #list > #carteLi {animation-name: cartegoryIn; animation-duration: 1s;}
+   #BorderLine:hover > #list > #carteLi2 {animation-name: cartegoryIn; animation-duration: 1s;}
+   @keyframes cartegoryIn {0%{opacity: 0;} 100%{opacity: 1;}}
+   #BorderLine:hover > #list > #carteLi > ul > ul > li {margin-bottom: 10px; position: relative; bottom: 30px;}
+   #BorderLine:hover > #list > #carteLi2 > ul > ul > li {margin-bottom: 10px; position: relative; bottom: 30px;}
+   @keyframes ht {0% {height: 0px;} 100% {height: 400px;}}
+   #carteLi {position: relative; left: 80px; bottom: 50px; width: 10%;}
+   #carteLi2 {position: relative; left: 500px; bottom: 50px; width: 10%;}
+   #carteLi3 {position: relative; left: 800px; bottom: 50px; width: 10%;}
+   #carteLi4 {position: relative; left: 1000px; bottom: 50px; width: 15%;}
+   .cl > ul {background-color: black;}
+   .carousel-control-prev {z-index: 1;}
+   .carousel-control-next {z-index: 1;}
+   .carousel-indicators {z-index: 1;}
+   #carouselExampleIndicators {position: absolute; top: 22%; width: 100%; height: 65%;}
+   #cross {position: absolute; margin-left: 80px; margin-top: 20px; width: 6px; height: 6px; border-top: 5px solid #48D1CC; border-right: 5px solid #48D1CC; transform: rotate(135deg); border-top-width: 3px; border-right-width: 3px;}
+   #BorderLine:hover {height: 100%; width: 8%; margin-left: 18px; border-bottom-style: solid; border-bottom-color: #48D1CC; border-bottom-width: 5px;}
+   @keyframes borderIn {0% {border-bottom-color: rgba(72,209,204,0)} 100%{border-bottom-color: rgba(72,209,204,1)}}
