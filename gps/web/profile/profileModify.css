@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    background-color: #F5F5F5;
+    height: 0;
+}
+
+#profile {
+    position: absolute;
+    width: 50%;
+    height: 35%;
+    left: 25%;
+    top: 20%;
+    background-color: #DCDCDC;
+}
+
+#proif > img {
+    margin: 5%;
+}
+#proif > h3 {
+    margin-left: 32%;
+}
+#hn {
+    margin-top: -30%;
+}
+#insName {
+    width: 40%;
+    height: 30px;
+    border-style: none none solid none;
+}
+#insCon {
+    width: 80%;
+    height: 150px;
+    border-style: none none solid none;
+}
+#btnmodi {
+    background-color: #000033;
+   color: white;
+    width: 10%;
+    height: 15%;
+}
+#btncanc {
+    background-color: #999999;
+   color: white;
+    border-color: transparent;
+    width: 10%;
+    height: 15%;
+}
