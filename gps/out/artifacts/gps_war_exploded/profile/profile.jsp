@@ -26,12 +26,12 @@
          <img src="../resources/image/unknownAvatar.jpg" alt="이미지 없음" srcset="">
          <h2 id = "pname">이름</h2>
          <h3 id = "pinfo">자기 소개</h3>
-         <a href="profilemodify.sign"><button id="btnModify">프로필 수정</button></a>
+         <a href="./profilemodify.jsp"><button id="btnModify">프로필 수정</button></a>
       	 <a href="../login/login.jsp"><button>로그아웃</button></a>
-         <a href="profileDelete.sign"><button id="btnDelete">회원 탈퇴</button></a>
-         <a href="cash.sign?cash=50000"><button>+50000</button></a>
-         <a href="cash.sign?cash=10000"><button>+10000</button></a>
-         <a href="cash.sign?cash=5000"><button>+5000</button></a>
+         <a href="./profileDelete.jsp"><button id="btnDelete">회원 탈퇴</button></a>
+         <a href="../cash/cash.jsp?cash=50000"><button>+50000</button></a>
+         <a href="../cash/cash.jsp?cash=10000"><button>+10000</button></a>
+         <a href="../cash/cash.jsp?cash=5000"><button>+5000</button></a>
     </div>
        <div id="nav">
           <ul>
