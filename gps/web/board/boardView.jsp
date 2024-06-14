@@ -39,7 +39,7 @@
         <h3>작성자 : <span id="bwriter">${dto.bwriter}</span></h3>
         <h3 id="bdate">작성일 : ${dto.bdate} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 조회수 : ${dto.bview} </h3>
         <hr>
-      <button onClick="location.href='boardUpdate.board?bnum=${dto.bnum}'" class="btn" id="write">수정</button>
+      <button onClick="location.href='./boardUpdate.board?bnum=${dto.bnum}'" class="btn" id="write">수정</button>
       <a href="./board.jsp?category=<%=category%>"><button class="btn" id="cancel">돌아가기</button></a>
    </div>
      <section>
@@ -66,7 +66,7 @@
 
                <hr class="st4"><br>
                <!-- 댓글 추가를 위한 form -->
-               <form class="validation-form" novalidate action="CInsert.cmt">
+               <form class="validation-form" novalidate action="../cart/CInsert.cmt">
                
                    <div id="wtComment">
 <%--                        <h3 id="nmSp"><span><%=email%></span></h3>--%>

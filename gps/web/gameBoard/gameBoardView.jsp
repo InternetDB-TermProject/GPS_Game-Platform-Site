@@ -39,8 +39,8 @@
         <h3>작성자 : <span id="mwriter">${dto.mwriter}</span></h3>
         <h3 id="mdate">작성일 : ${dto.mdate} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 조회수 : ${dto.mview} </h3>
         <hr>
-      <button onClick="location.href='mBoardUpdate.make?mnum=${dto.mnum}'" class="btn" id="write">수정</button>
-      <a href="mBoard.make"><button class="btn" id="cancel">돌아가기</button></a>
+      <button onClick="location.href='./gameBoardUpdate.jsp?mnum=${dto.mnum}'" class="btn" id="write">수정</button>
+      <a href="./gameBoard.jsp"><button class="btn" id="cancel">돌아가기</button></a>
    </div>
    			<section>
 	        <div class="cobox">
@@ -66,7 +66,7 @@
 
                <hr class="st4"><br>
                <!-- 댓글 추가를 위한 form -->
-               <form class="validation-form" novalidate action="./mCInsert.cmt">
+               <form class="validation-form" novalidate action="./mCInsert.jsp">
                
                    <div id="wtComment">
                         <h3 id="nmSp"><span><%=email%></span></h3>
