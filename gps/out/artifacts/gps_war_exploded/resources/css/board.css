@@ -1,0 +1,36 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+table {
+	margin-right: 50%;
+	margin-top: 10%;
+	border-top-style: solid;
+	border-width: 2px;
+	text-align: match-parent;
+}
+tr:nth-child(1) {
+	width: 30%;
+}
+thead {
+	background-color: #d0d8e2;
+}
+
+#bgcaption{
+	caption-side: top;
+}
+#smcaption {
+	caption-side: bottom;
+	text-align: right;
+	height: 10%;
+}
+#pagi {
+	border-style: none;
+}
+#btnwrite {
+	background-color: #DC143C;
+	width: 10%;
+	height: 10%;
+	color: white;
+	border-style: none;
+}
