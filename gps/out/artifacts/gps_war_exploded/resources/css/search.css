@@ -1,0 +1,12 @@
+body {background-color: #d0d8e2;}
+#ResultList {position: absolute; top: 20%; left: 10%; width: 80%; height: 100%}
+#ListHeader {position: absolute; height: 10%; width: 100%; border-top: 3px; border-bottom: 3px; border-top-color: #000080; border-bottom-color: #000080; border-top-style: solid; border-bottom-style: solid;}
+#SearchTitle {position: absolute; top: 13%; left: 10%;}
+#ListHeader > ul {position: absolute; list-style: none; display: flex; width: 80%; height: 100%;  justify-content: space-between; padding-top: 20px; padding-left: 60px;}
+#Result {position: absolute; top: 71px; height: 100%; width: 100%;}
+#Result > div > img {margin-left: 50px; margin-top: 30px;}
+#sum {position: relative; width: 100%; height: 8%; background-color: #000080;}
+#sum > h3 {text-align: right; padding: 10px; color: white;}
+#pay {text-align: right; width: 100%;}
+#btnPay {width: 50px; height: 30px; background-color: transparent; border-style: solid; border-color: #000080; margin: 10px; color: #000080; font-size: 15px;}
+#btnPay:hover {background-color: #000080;  color: white;}

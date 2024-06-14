@@ -41,8 +41,8 @@
             <ul>
                <h2>카테고리</h2>
                <ul>
-                  <a href="TagSearchResult.game?Search=무료"><li>무료 게임</li></a>
-                  <a href="TagSearchResult.game?Search=인기"><li>인기 게임</li></a>
+                  <a href="../gameTag/gameTag.jsp?Search=무료"><li>무료 게임</li></a>
+                  <a href="../gameTag/gameTag.jsp?Search=인기"><li>인기 게임</li></a>
                </ul>
             </ul>
          </div>
@@ -50,12 +50,12 @@
             <ul>
                <h2>장르</h2>
                <ul>
-                  <a href="TagSearchResult.game?Search=1인칭"><li>1인칭 슈팅</li></a>
-                  <a href="TagSearchResult.game?Search=액션"><li>액션</li></a>
-                  <a href="TagSearchResult.game?Search=전략"><li>전략</li></a>
-                  <a href="TagSearchResult.game?Search=멀티플레이"><li>멀티플레이</li></a>
-                  <a href="TagSearchResult.game?Search=액션RPG"><li>액션 RPG</li></a>
-                  <a href="TagSearchResult.game?Search=공포"><li>공포</li></a>
+                  <a href="../gameTag/gameTag.jsp?Search=1인칭 슈팅"><li>1인칭 슈팅</li></a>
+                  <a href="../gameTag/gameTag.jsp?Search=액션"><li>액션</li></a>
+                  <a href="../gameTag/gameTag.jsp?Search=전략"><li>전략</li></a>
+                  <a href="../gameTag/gameTag.jsp?Search=멀티플레이"><li>멀티플레이</li></a>
+                  <a href="../gameTag/gameTag.jsp?Search=액션RPG"><li>액션 RPG</li></a>
+                  <a href="../gameTag/gameTag.jsp?Search=공포"><li>공포</li></a>
                </ul>
             </ul>
          </div>
