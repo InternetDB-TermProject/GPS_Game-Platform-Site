@@ -21,7 +21,7 @@
     <div id="header">
         <a href="../main/main.jsp"><img src="../resources/image/Alogo.png" width=70px height=70px></a><h2>| Result</h2>
     </div>
-    <h2 id="SearchTitle">검색 결과</h2>
+    <h2 id="SearchTitle">상세 검색 결과</h2>
     <div id="ResultList">
         <div id="ListHeader">
             <ul>

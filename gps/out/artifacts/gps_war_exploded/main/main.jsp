@@ -63,8 +63,8 @@
             <ul>
                <h2>게시판</h2>
                <ul>
-                  <a href="board.board?category=1"><li>QnA</li></a>
-                  <a href="board.board?category=2"><li>자유 게시판</li></a>
+                  <a href="../board/board.jsp?category=1"><li>QnA</li></a>
+                  <a href="../board/board.jsp?category=2"><li>자유 게시판</li></a>
                </ul>
             </ul>
          </div>
@@ -73,7 +73,7 @@
                <h2>게임 게시판</h2>
                <ul>
                   <a href="mBoard.make"><li>HTML</li></a>
-                  <a href="board.board"><li>Unity</li></a>
+                  <a href="../board/board"><li>Unity</li></a>
                </ul>
             </ul>
          </div>
