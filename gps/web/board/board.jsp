@@ -36,36 +36,36 @@
 				if(category == 1) out.println("QnA");
 	    		if(category == 2) out.println("자유"); %> 게시판</h1></caption>
 		<caption id="smcaption"><a href="./boardWrite.jsp?category=<%= category %>"><button id="btnwrite">게시글 작성</button></a></caption>
-		<caption>
-			<div class="d-flex justify-content-center">
-				<nav aria-label="Page navigation example">
-				  <ul class="pagination">
-				    <c:if test="${startNum <= 1 }">
-					  <li class="page-item"><a class="page-link" style = "color:grey" onclick = "alert('첫 페이지입니다.')">Previous</a></li>
-					</c:if>
-					<c:if test="${startNum > 1 }">
-					  <li class="page-item"><a class="page-link" href="./board.jsp?category=<%= category%>&p=${startNum - 1}">Previous</a></li>
-					</c:if>
-					<c:forEach var = "i" begin="0" end="${numOfPages-1}" step="1">
-						<c:if test="${startNum+i <= lastNum }">
-							<c:if test = "${startNum+i == p}">
-						  	<li class="page-item active"><a class="page-link" href="./board.jsp?category=<%= category%>&p=${startNum + i}">${startNum + i}</a></li>
-							</c:if>
-							<c:if test = "${startNum+i != p}">
-						  	<li class="page-item"><a class="page-link" href="./board.jsp?category=<%= category%>&p=${startNum + i}">${startNum + i}</a></li>
-							</c:if>
-						</c:if>
-					</c:forEach>
-					<c:if test="${startNum + numOfPages > lastNum }">
-					  <li class="page-item"><a class="page-link" style = "color:grey" onclick = "alert('다음 페이지가 없습니다.')">Next</a></li>
-					</c:if>
-					<c:if test="${startNum + numOfPages <= lastNum }">
-					  <li class="page-item"><a class="page-link" href="./board.jsp?category=<%= category%>&p=${startNum+numOfPages}">Next</a></li>
-					</c:if>
-				  </ul>
-				</nav>
-			</div>
-		</caption>
+<%--		<caption>--%>
+<%--			<div class="d-flex justify-content-center">--%>
+<%--				<nav aria-label="Page navigation example">--%>
+<%--				  <ul class="pagination">--%>
+<%--				    <c:if test="${startNum <= 1 }">--%>
+<%--					  <li class="page-item"><a class="page-link" style = "color:grey" onclick = "alert('첫 페이지입니다.')">Previous</a></li>--%>
+<%--					</c:if>--%>
+<%--					<c:if test="${startNum > 1 }">--%>
+<%--					  <li class="page-item"><a class="page-link" href="./board.jsp?category=<%= category%>&p=${startNum - 1}">Previous</a></li>--%>
+<%--					</c:if>--%>
+<%--					<c:forEach var = "i" begin="0" end="${numOfPages-1}" step="1">--%>
+<%--						<c:if test="${startNum+i <= lastNum }">--%>
+<%--							<c:if test = "${startNum+i == p}">--%>
+<%--						  	<li class="page-item active"><a class="page-link" href="./board.jsp?category=<%= category%>&p=${startNum + i}">${startNum + i}</a></li>--%>
+<%--							</c:if>--%>
+<%--							<c:if test = "${startNum+i != p}">--%>
+<%--						  	<li class="page-item"><a class="page-link" href="./board.jsp?category=<%= category%>&p=${startNum + i}">${startNum + i}</a></li>--%>
+<%--							</c:if>--%>
+<%--						</c:if>--%>
+<%--					</c:forEach>--%>
+<%--					<c:if test="${startNum + numOfPages > lastNum }">--%>
+<%--					  <li class="page-item"><a class="page-link" style = "color:grey" onclick = "alert('다음 페이지가 없습니다.')">Next</a></li>--%>
+<%--					</c:if>--%>
+<%--					<c:if test="${startNum + numOfPages <= lastNum }">--%>
+<%--					  <li class="page-item"><a class="page-link" href="./board.jsp?category=<%= category%>&p=${startNum+numOfPages}">Next</a></li>--%>
+<%--					</c:if>--%>
+<%--				  </ul>--%>
+<%--				</nav>--%>
+<%--			</div>--%>
+<%--		</caption>--%>
 		<thead>
 			<tr>
 				<th>번호</th>
