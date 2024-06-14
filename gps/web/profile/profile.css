@@ -1,0 +1,165 @@
+body {
+            margin: 0;
+            padding: 0;
+            background-color: #F5F5F5;
+        }
+        #section {
+            position: absolute;
+            height: 20rem;
+            width: 75%;
+            top: 10.1%;
+            margin-left: 25%;
+            overflow: auto;
+            box-shadow: 2px 2px;
+            top: 10%;
+            border-left-style: solid;
+        }
+        #section > img {
+            position: absolute;
+            margin: 4rem;
+            margin-left: 5rem;
+            width: 11rem;
+            height: 11rem;
+            border-style: solid;
+            border-color: green;
+            background-color: white;
+        }
+        #section > h2 {
+            position: absolute;
+            top: 2.5rem;
+            left: 20rem;
+        }
+        #section > h3 {
+            position: absolute;
+            left: 20rem;
+            margin-top: 8rem;
+        }
+        #nav {
+           position: fixed;
+           width: 24.8%;
+           top: 16.2%;
+            height: 30%;
+           background-color: white;
+            
+        }
+        #nav > ul {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            margin:0;
+            text-align: center;
+            padding-left: 0%;
+        }
+        #nav > ul > li {       
+           list-style: none;
+            width: 100%;
+            height: 100%;
+            font-size: 18px;
+            border-bottom-style:solid;
+            border-width: 2px;
+            padding-top: 6%;
+        }
+        #nav > ul > li:nth-child(1) {
+            border-top-style: solid;
+        }
+      #btnModify {
+         position: absolute;
+         left: 80%;
+         top: 10%;
+         width: 10%;
+         height: 20%;
+            border-color: #E6E6FA;
+            background-color: #F8F8FF;
+            border-width: 3px;
+            font-size: 15px;
+      }
+      #btnDelete {
+         position: absolute;
+         left: 80%;
+         top: 40%;
+         width: 10%;
+         height: 20%;
+            border-color: #E6E6FA;
+            background-color: #F8F8FF;
+            border-width: 3px;
+            font-size: 15px;
+      }
+        #TwoSection {
+            position: absolute;
+            height: 23rem;
+            width: 75%;
+            top: 52%;
+            margin-left: 25%;
+            overflow: auto;
+            border-left-style: solid;
+            background-color:    #DCDCDC;
+            border-top-style: solid;
+            border-top-width: 2px;
+        }
+        #TwoSection > h1 {
+            position: absolute;
+            width: 25%;
+            height: 15%;
+            padding-bottom: 1%;
+            border-bottom-style: solid;
+            border-width: 2px;
+        }
+        #TwoSection > ul {
+            position: absolute;
+            list-style: none;
+            top: 30%;
+            width: 85%;
+            height: 40%;
+        }
+        #TwoSection > ul > li {
+            width: 50%;
+            height: 70%;
+            border-style: solid;
+            margin-bottom: 2%;
+            background:    #F5F5F5;
+        }
+        #TwoSection > ul > li > img{
+            margin: 2%;
+            width: 20%;
+            height: 80%;
+        }
+        #TwoSection > ul > li > h2{
+            margin-left: 46%;
+            margin-top: -15%;
+        }
+        .insc {
+            left: 5%;
+        }
+        #ThirdSection {
+            position: absolute;
+            background-color:   #DCDCDC;
+            width: 75%;
+            height: 75%;
+            top: 100%;
+            margin-left: 25%;
+            border-left-style: solid;
+        }
+        #ThirdSection > h1 {
+            position: absolute;
+            width: 25%;
+            height: 15%;
+            border-bottom-style: solid;
+            border-width: 2px;
+        }
+        .thsc {
+            left: 5%;
+        }
+        #myBoard {
+            position: absolute;
+            top: 30%;
+            width: 85%;
+            height: 40%;
+            border-style: solid none solid none;
+            background-color: #F5F5F5;
+        }
+        #ThirdSection > h1, #myBoard {
+            left: 5%;
+        } 
+        

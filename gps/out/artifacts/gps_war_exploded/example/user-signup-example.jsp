@@ -13,14 +13,18 @@
 </head>
 <body>
     <%
+        //email 중복검사 있어서 바꿔줘야 회원가입 성공함.
         UserSignupReqeust userSignupReqeust = new UserSignupReqeust(
                 "email",
                 "010-9999-9999",
                 "nickname",
                 "password",
-                true,
-                true
+                true, //이용 약관. false면 회원가입 실패
+                true  //구독. db에 저장하지는 않음.
         );
+
+        //message가 정확히 '회원가입에 성공하셨습니다.'가 아니라 다른거면 회원가입 실패한거임
+        //alert나 예외처리로 쓰면될듯
         String message = UserRepository.signup(userSignupReqeust);
 
         out.println(message);
