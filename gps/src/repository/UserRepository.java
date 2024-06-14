@@ -1,6 +1,8 @@
 package repository;
 
+import payload.request.UserLoginRequest;
 import payload.request.UserSignupReqeust;
+import payload.response.UserLoginResponse;
 import util.DBUtil;
 
 import java.sql.*;
@@ -35,5 +37,22 @@ public class UserRepository {
         preparedStatement3.executeUpdate();
 
         return "회원가입에 성공하셨습니다.";
+    }
+
+    public static UserLoginResponse login(UserLoginRequest request) throws SQLException {
+        Connection conn = DBUtil.getConnection();
+
+        String query = "select email from users where email=? and password=?";
+        PreparedStatement preparedStatement = conn.prepareStatement(query);
+        preparedStatement.setString(1, request.getEmail());
+        preparedStatement.setString(2, request.getPassword());
+        ResultSet rs =preparedStatement.executeQuery();
+        if(rs.next()) {
+            String nickname = rs.getString("email");
+            return new UserLoginResponse(true, nickname);
+        }
+        else{
+            return new UserLoginResponse(false, "해당하는 계정이 없습니다.");
+        }
     }
 }
