@@ -30,13 +30,12 @@
             alert("검색 완료")
       }
       </script>
-      <input type="text" id="searchIn" placeholder="검색어를 입력해주세요" autocomplete="off" onkeydown="if(event.keyCode == 13){enterKey(this.value)}"><a href="profile.sign"><img src="../resources/image/user2.png" width=50 height=50></a><a href="cart.cart"><img src="../resources/image/cart.png" width=55 height=55></a>
+      <input type="text" id="searchIn" placeholder="검색어를 입력해주세요" autocomplete="off" onkeydown="if(event.keyCode == 13){enterKey(this.value)}"><a href="../profile/profile.jsp"><img src="../resources/image/user2.png" width=50 height=50></a><a href="cart.cart"><img src="../resources/image/cart.png" width=55 height=55></a>
    
    </div>
    <div id="BorderLine">
       <h4>게임</h4>
       <div id="cross"></div>
-      
       <div id="list">
          <div id="carteLi" class="cl">
             <ul>
