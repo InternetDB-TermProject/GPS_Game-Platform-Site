@@ -72,7 +72,7 @@
             <ul>
                <h2>게임 게시판</h2>
                <ul>
-                  <a href="mBoard.make"><li>HTML</li></a>
+                  <a href="../gameBoard/gameBoard.jsp"><li>HTML</li></a>
                   <a href="../board/board"><li>Unity</li></a>
                </ul>
             </ul>

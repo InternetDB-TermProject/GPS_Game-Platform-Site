@@ -8,16 +8,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%
-    int category = (int)session.getAttribute("category");
-   
-//   String email = (String)session.getAttribute("email");
+	String email = (String)session.getAttribute("email");
 
-//   CommentsDao dao = new CommentsDao();
-//   int bnum = Integer.parseInt(request.getParameter("bnum"));
-//   ArrayList<CommentsDto> dtos = dao.list(bnum, 1);
+//	CommentsDao dao = new CommentsDao();
+//	int mnum = Integer.parseInt(request.getParameter("mnum"));
+//	ArrayList<CommentsDto> dtos = dao.list(mnum, 2);
 //
-//   System.out.println(bnum);
-//   session.setAttribute("bnum", bnum);
+//	System.out.println(mnum);
+//	session.setAttribute("mnum", mnum);
     %>
 <!DOCTYPE html>
 <html>
@@ -32,30 +30,32 @@
    <div id="header">
      <a href="../main/main.jsp"><img src="../resources/image/Alogo.png" width=70px height=70px></a><h2>| Board</h2>
    </div>
-   <h1 class="ins" id="insInfo">${dto.btitle}</h1>
+   <h1 class="ins" id="insInfo">${dto.mtitle}</h1>
    <div id="insertForm" class="ins">
-        <h2 id="btag">${dto.btag}</h2>
+        <h2 id="mtag">${dto.mtag}</h2>
+        <iframe src = ./randomnum.html<%--"game/${dto.mfile}"--%> name = "right" width = "1300" height = "500"></iframe>
         <hr>
-        <h3>작성자 : <span id="bwriter">${dto.bwriter}</span></h3>
-        <h3 id="bdate">작성일 : ${dto.bdate} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 조회수 : ${dto.bview} </h3>
+        <a download href="game/${dto.mfile}">파일 다운로드</a>
+        <h3>작성자 : <span id="mwriter">${dto.mwriter}</span></h3>
+        <h3 id="mdate">작성일 : ${dto.mdate} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 조회수 : ${dto.mview} </h3>
         <hr>
-      <button onClick="location.href='./boardUpdate.board?bnum=${dto.bnum}'" class="btn" id="write">수정</button>
-      <a href="./board.jsp?category=<%=category%>"><button class="btn" id="cancel">돌아가기</button></a>
+      <button onClick="location.href='./gameBoardUpdate.jsp?mnum=${dto.mnum}'" class="btn" id="write">수정</button>
+      <a href="./gameBoard.jsp"><button class="btn" id="cancel">돌아가기</button></a>
    </div>
-     <section>
-           <div class="cobox">
-              <!-- 댓글수를 위한 변수 가져오기 -->
-               <h2 class="coh3">댓글 </h2>
-               <hr><br>
-               
-           <!-- 댓글 정보 가져와서 넣어주기 -->
-<%--           <% for(CommentsDto dto : dtos){ %>--%>
+   			<section>
+	        <div class="cobox">
+	        	<!-- 댓글수를 위한 변수 가져오기 -->
+	            <h2 class="coh3">댓글 </h2>
+	            <hr class><br>
+	            
+	        <!-- 댓글 정보 가져와서 넣어주기 -->
+<%--	       <% for(CommentsDto dto : dtos){ %>--%>
 <%--            <div class="container justify-content-center border-left border-right">--%>
 <%--                <div class="d-flex justify-content-center py-2">--%>
 <%--                    <div class="second py-2 px-2"> <span class="text1"><%=dto.getCotag() %></span>--%>
 <%--                        <div class="d-flex justify-content-between py-1 pt-2">--%>
-<%--                            <div><img src="../resources/image/unknownAvatar.jpg" width="18"><span class="text2"><%=dto.getCobcode() %></span><span class="tdate"><%=dto.getCdate() %></span></div>--%>
-<%--                            <div><span class="text3"><button class="mod">수정</button></span><span class="thumbup"><i class="fa fa-thumbs-o-up"></i></span><span class="text4"><button onclick="location.href='cDelete.cmt?conum=<%=dto.getConum()%>'" class="del">삭제</button></span></div>--%>
+<%--                            <div><img src="resources/css/image/unknownAvatar.jpg" width="18"><span class="text2"><%=dto.getCobcode() %></span><span class="tdate"><%=dto.getCdate() %></span></div>--%>
+<%--                            <div><span class="text3"><button class="mod">수정</button></span><span class="thumbup"><i class="fa fa-thumbs-o-up"></i></span><span class="text4"><button onclick="location.href='mCDelete.cmt?conum=<%=dto.getConum()%>'" class="del">삭제</button></span></div>--%>
 <%--                        </div>--%>
 <%--                    </div>--%>
 <%--                </div>--%>
@@ -66,10 +66,10 @@
 
                <hr class="st4"><br>
                <!-- 댓글 추가를 위한 form -->
-               <form class="validation-form" novalidate action="../cart/CInsert.cmt">
+               <form class="validation-form" novalidate action="./mCInsert.jsp">
                
                    <div id="wtComment">
-<%--                        <h3 id="nmSp"><span><%=email%></span></h3>--%>
+                        <h3 id="nmSp"><span><%=email%></span></h3>
                         <textarea name="cotag" id="cotag" cols="128" rows="8"></textarea>
                         <button type="submit" id="btnsub">등록</button>
                    </div>
