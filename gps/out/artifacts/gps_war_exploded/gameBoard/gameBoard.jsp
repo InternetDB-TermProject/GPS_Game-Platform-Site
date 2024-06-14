@@ -26,7 +26,7 @@
 	<div class="container">
 	<table class="table table-hover">
 		<caption id="bgcaption"><h1>게임 게시판</h1></caption>
-		<caption id="smcaption"><a href="./mBoardWrite.jsp"><button id="btnwrite">게시글 작성</button></a></caption>
+		<caption id="smcaption"><a href="./gameBoardWrite.jsp"><button id="btnwrite">게시글 작성</button></a></caption>
 <%--		<caption>--%>
 <%--			<div class="d-flex justify-content-center">--%>
 <%--				<nav aria-label="Page navigation example">--%>
@@ -67,15 +67,15 @@
 			</tr>
 		</thead>
 		<tbody>
-<%--			<c:forEach var='dto' items='${dtos}'>--%>
-<%--				<tr onClick="location.href='mBoardView.make?mnum=${dto.mnum}'">--%>
-<%--					<td>${dto.mnum}</td>--%>
-<%--					<td>${dto.mtitle}</td>--%>
-<%--					<td>${dto.mwriter}</td>	--%>
-<%--					<td><fmt:formatDate value="${dto.mdate}"/></td>--%>
-<%--					<td>${dto.mview}</td>--%>
-<%--				</tr>--%>
-<%--			</c:forEach>--%>
+			<c:forEach var='dto' items='${dtos}'>
+				<tr onClick="location.href='./gameBoardView.make?mnum=${dto.mnum}'">
+					<td>${dto.mnum}</td>
+					<td>${dto.mtitle}</td>
+					<td>${dto.mwriter}</td>
+					<td><fmt:formatDate value="${dto.mdate}"/></td>
+					<td>${dto.mview}</td>
+				</tr>
+			</c:forEach>
 		</tbody>
 	</table>
 	</div>
