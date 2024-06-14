@@ -6,9 +6,9 @@ body {background-color: #d0d8e2;}
    #bottomText {position: absolute; top: 2200px; font-size:small; text-align: center; width: 100%;}
    #freeArea {position: absolute; top: 1400px; left: 45px; width: 210px; height: 60px; border-bottom-style: solid; border-bottom-width: 5px;}
    #freeTagCard {position: absolute; top: 1500px; left: 45px; width: 100%;}
-   #famousArea {position: absolute; top: 700px; left: 45px; width: 210px; height: 60px; border-bottom-style: solid; border-bottom-width: 5px;}
+   #famousArea {position: absolute; top: 730px; left: 45px; width: 210px; height: 60px; border-bottom-style: solid; border-bottom-width: 5px;}
    #famousTagCard {position: absolute; top: 800px; left: 45px; width: 100%;}
-   .card {display: inline-block; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); max-width: 300px; margin: left; text-align: center; font-family: arial; margin-right: 1%; margin-left: 3%;}
+   .card {display: inline-block; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); max-width: 300px; text-align: center; font-family: arial; margin-right: 1%; margin-left: 3%;}
    .cardImageArea {width: 289px; height: 345px;}
    .cardImageArea:hover {animation-name: chooseCard; animation-duration: 0.7s; animation-fill-mode: forwards;}
    @keyframes chooseCard {0% {background-color: rgba(72,209,204,0);} 100%{background-color: rgba(72,209,204,0.7);}}
@@ -35,7 +35,7 @@ body {background-color: #d0d8e2;}
    .cl > ul {background-color: black;}
    .carousel-control-prev {z-index: 1;}
    .carousel-control-next {z-index: 1;}
-   .carousel-indicators {z-index: 1;}
+   .carousel-indicators {z-index: 1; position: absolute !important; height: 25% !important;}
    #carouselExampleIndicators {position: absolute; top: 22%; width: 100%; height: 65%;}
    #cross {position: absolute; margin-left: 80px; margin-top: 20px; width: 6px; height: 6px; border-top: 5px solid #48D1CC; border-right: 5px solid #48D1CC; transform: rotate(135deg); border-top-width: 3px; border-right-width: 3px;}
    #BorderLine:hover {height: 100%; width: 8%; margin-left: 18px; border-bottom-style: solid; border-bottom-color: #48D1CC; border-bottom-width: 5px;}
