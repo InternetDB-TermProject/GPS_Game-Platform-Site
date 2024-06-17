@@ -12,10 +12,11 @@ public class AppDetailDTO {
     String header_image;
     String pc_requirements;
     Long price;
-    Long recommandations;
+    Long recommendations;
     String release_date;
+    String website;
 
-    public AppDetailDTO(Long steam_appId, String name, String type, Long required_age, String detailed_description, String header_image, String pc_requirements, Long price, Long recommandations, String release_date) {
+    public AppDetailDTO(Long steam_appId, String name, String type, Long required_age, String detailed_description, String header_image, String pc_requirements, Long price, Long recommendations, String release_date, String website) {
         this.steam_appId = steam_appId;
         this.name = name;
         this.type = type;
@@ -24,8 +25,9 @@ public class AppDetailDTO {
         this.header_image = header_image;
         this.pc_requirements = pc_requirements;
         this.price = price;
-        this.recommandations = recommandations;
+        this.recommendations = recommendations;
         this.release_date = release_date;
+        this.website = website;
     }
 
     public AppDetailDTO(Long steam_appId, JSONObject jsonObject) {
@@ -39,10 +41,11 @@ public class AppDetailDTO {
                 "" : (String)((JSONObject)jsonObject.get("pc_requirements")).getOrDefault("minimum", "");
         this.price = (JSONObject)jsonObject.getOrDefault("price",null)==null ?
                 0L : (Long)((JSONObject)jsonObject.get("price")).getOrDefault("final",0L);
-        this.recommandations = (JSONObject)jsonObject.getOrDefault("recommandations",null)==null ?
-                0L : (Long)((JSONObject)jsonObject.get("recommandations")).getOrDefault("total",0L);
+        this.recommendations = (JSONObject)jsonObject.getOrDefault("recommendations",null)==null ?
+                0L : (Long)((JSONObject)jsonObject.get("recommendations")).getOrDefault("total",0L);
         this.release_date = (JSONObject)jsonObject.getOrDefault("release_date", null)==null ?
                 "" : (String)((JSONObject)jsonObject.get("release_date")).getOrDefault("date", "");
+        this.website = (String)jsonObject.get("website");
     }
 
     public Long getSteam_appId() {
@@ -105,12 +108,12 @@ public class AppDetailDTO {
         return price;
     }
 
-    public Long getRecommandations() {
-        return recommandations;
+    public Long getRecommendations() {
+        return recommendations;
     }
 
-    public void setRecommandations(Long recommandations) {
-        this.recommandations = recommandations;
+    public void setrecommendations(Long recommendations) {
+        this.recommendations = recommendations;
     }
 
     public void setPrice(Long price) {
@@ -124,5 +127,13 @@ public class AppDetailDTO {
 
     public void setRelease_date(String release_date) {
         this.release_date = release_date;
+    }
+
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
     }
 }

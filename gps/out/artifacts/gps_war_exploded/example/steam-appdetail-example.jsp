@@ -17,7 +17,7 @@
   out.println(appDetail.getHeader_image()+"<br>");
   out.println(appDetail.getDetailed_description()+"<br>");
   out.println(appDetail.getRequired_age()+"<br>");
-  out.println(appDetail.getRecommandations()+"<br>");
+  out.println(appDetail.getRecommendations()+"<br>");
   out.println(appDetail.getPc_requirements()+"<br>");
   out.println(appDetail.getPrice()+"<br>");
   out.println(appDetail.getRelease_date()+"<br>");

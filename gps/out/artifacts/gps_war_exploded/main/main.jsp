@@ -127,43 +127,16 @@
       %>
       <div class="card">
          <div class="cardImageArea">
-            <a href="DarkSoulsInformation.game"><img src=<%=d.getHeader_iamge()%> alt=""></a>
+            <a href="<%=d.getWebsite()%>"><img src=<%=d.getHeader_iamge()%> alt=""></a>
          </div>
          <h6><%=d.getName()%></h6>
-         <p class="price">₩<%=d.getPrice()%></p>
+         <p class="price">♥<%=d.getRecommendations()%></p>
       </div>
       <%}%>
    </div>
    <br>
    <%}%>
 
-
-
-<%--   <div id="freeArea">--%>
-<%--      <h3>무료 게임</h3>--%>
-<%--   </div>--%>
-<%--   <div id="freeTagCard">--%>
-<%--      <div class="card">--%>
-<%--         <a href="csgoInformation.game"><img src="../resources/image/csgo.jpg" alt=""></a>--%>
-<%--         <h4>CS:GO</h4>--%>
-<%--         <p class="price">무료</p>--%>
-<%--      </div>--%>
-<%--      <div class="card">--%>
-<%--         <a href="WarthunderInformation.game"><img src="../resources/image/warThunder.jpg" alt=""></a>--%>
-<%--         <h4>War Thunder</h4>--%>
-<%--         <p class="price">무료</p>--%>
-<%--      </div>--%>
-<%--      <div class="card">--%>
-<%--         <a href="WarframeInformation.game"><img src="../resources/image/warframe.jpg" alt=""></a>--%>
-<%--         <h4>Warframe</h4>--%>
-<%--         <p class="price">무료</p>--%>
-<%--      </div>--%>
-<%--      <div class="card">--%>
-<%--         <a href="DeceitInformation.game"><img src="../resources/image/deceit.jpg" alt=""></a>--%>
-<%--         <h4>Deceit</h4>--%>
-<%--         <p class="price">무료</p>--%>
-<%--      </div>--%>
-<%--   </div>--%>
    <div id="bottomText">
    공식 GPS 상점에서 좋아하는 영웅을 모두 만나보십시오. 새로운 상품, 특별한 콜렉터 에디션과 멋진 프로모션 등 GPS 최고의 상품을 1년 내내 선보입니다. 시즌 패스부터 수집품까지,<br>
    풍성한 즐길 거리로 게임을 완벽하게 체험하실 수 있습니다. GPS 상점에는 콘솔과 PC 사용자를 위한 멋진 모험이 가득합니다.<br><br> <hr>

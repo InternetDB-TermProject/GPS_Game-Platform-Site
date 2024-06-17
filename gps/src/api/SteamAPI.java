@@ -71,6 +71,7 @@ public class SteamAPI {
             return null;
         }
         else{
+            if (dataJsonObject.get("website")==null) return null;
             AppDetailDTO appDetailDTO = new AppDetailDTO(appId, dataJsonObject);
             return appDetailDTO;
         }

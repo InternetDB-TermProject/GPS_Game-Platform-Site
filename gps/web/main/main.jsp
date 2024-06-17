@@ -127,10 +127,10 @@
       %>
       <div class="card">
          <div class="cardImageArea">
-            <a href="DarkSoulsInformation.game"><img src=<%=d.getHeader_iamge()%> alt=""></a>
+            <a href="<%=d.getWebsite()%>"><img src=<%=d.getHeader_iamge()%> alt=""></a>
          </div>
          <h6><%=d.getName()%></h6>
-         <p class="price">₩<%=d.getPrice()%></p>
+         <p class="price">♥<%=d.getRecommendations()%></p>
       </div>
       <%}%>
    </div>
