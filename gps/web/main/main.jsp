@@ -1,5 +1,8 @@
+<%@ page import="repository.SteamRepository" %>
+<%@ page import="payload.dto.AppPreviewDTO" %>
+<%@ page import="java.util.List" %>
 <!--<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>-->
+             pageEncoding="UTF-8"%>-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -110,55 +113,30 @@
    <div id="famousArea">
       <h3>인기 게임</h3>
    </div>
+   <%
+      List<AppPreviewDTO> apps = SteamRepository.getAppList().getAppPreviewDTOList();
+      int i=0; int j;
+
+      for(int k=0; k<apps.size()/3; k++){
+   %>
    <div id="famousTagCard">
+      <%
+         j=i;
+         for(;i<j+3;i++) {
+            AppPreviewDTO d = apps.get(i);
+      %>
       <div class="card">
          <div class="cardImageArea">
-            <a href="DarkSoulsInformation.game"><img src="../resources/image/Dark_souls_3_cover_art.jpg" alt=""></a>
+            <a href="DarkSoulsInformation.game"><img src=<%=d.getHeader_iamge()%> alt=""></a>
          </div>
-         <h4>Dark Souls lll</h4>
-         <p class="price">₩49,800</p>
+         <h6><%=d.getName()%></h6>
+         <p class="price">₩<%=d.getPrice()%></p>
       </div>
-      <div class="card">
-         <a href="EldenRingInformation.game"><img src="../resources/image/eldenring.jpg" alt=""></a>
-         <h4>Elden Ring</h4>
-         <p class="price">₩64,800</p>
-      </div>
-      <div class="card">
-         <a href="BattleFieldInformation.game"><img src="../resources/image/BF1.jpg" alt=""></a>
-         <h4>BattleField 1™</h4>
-         <p class="price">₩11,000</p>
-      </div>
-      <div class="card">
-         <a href="EscapeFromTarkovInformation.game"><img src="../resources/image/eft.jpg" alt=""></a>
-         <h4>EscapeFromTarkov</h4>
-         <p class="price">₩55,800</p>
-      </div>
+      <%}%>
    </div>
-   <div id="freeArea">
-      <h3>무료 게임</h3>
-   </div>
-   <div id="freeTagCard">
-      <div class="card">
-         <a href="csgoInformation.game"><img src="../resources/image/csgo.jpg" alt=""></a>
-         <h4>CS:GO</h4>
-         <p class="price">무료</p>
-      </div>
-      <div class="card">
-         <a href="WarthunderInformation.game"><img src="../resources/image/warThunder.jpg" alt=""></a>
-         <h4>War Thunder</h4>
-         <p class="price">무료</p>
-      </div>
-      <div class="card">
-         <a href="WarframeInformation.game"><img src="../resources/image/warframe.jpg" alt=""></a>
-         <h4>Warframe</h4>
-         <p class="price">무료</p>
-      </div>
-      <div class="card">
-         <a href="DeceitInformation.game"><img src="../resources/image/deceit.jpg" alt=""></a>
-         <h4>Deceit</h4>
-         <p class="price">무료</p>
-      </div>
-   </div>
+   <br>
+   <%}%>
+
    <div id="bottomText">
    공식 GPS 상점에서 좋아하는 영웅을 모두 만나보십시오. 새로운 상품, 특별한 콜렉터 에디션과 멋진 프로모션 등 GPS 최고의 상품을 1년 내내 선보입니다. 시즌 패스부터 수집품까지,<br>
    풍성한 즐길 거리로 게임을 완벽하게 체험하실 수 있습니다. GPS 상점에는 콘솔과 PC 사용자를 위한 멋진 모험이 가득합니다.<br><br> <hr>

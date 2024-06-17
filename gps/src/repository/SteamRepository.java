@@ -1,13 +1,10 @@
 package repository;
 
 import api.SteamAPI;
-import payload.dto.AppPreviewDTO;
-import payload.dto.AppDetailDTO;
-import payload.dto.AppPreviewsDTO;
-import payload.dto.SteamAppListResponse;
+import payload.dto.*;
+import payload.response.AppListResponse;
 import util.DBUtil;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,11 +16,11 @@ public class SteamRepository {
     public static void updateData() throws SQLException {
         Connection conn = DBUtil.getConnection();
 
-        SteamAppListResponse appListResponse = SteamAPI.getAppListFromSteam();
-        AppPreviewsDTO appsDTO = appListResponse.getApplist();
-        List<AppPreviewDTO> appsDTOList = appsDTO.getApps();
+        SteamAppsResponse appListResponse = SteamAPI.getAppListFromSteam();
+        AppsDTO appsDTO = appListResponse.getApplist();
+        List<AppDTO> appsDTOList = appsDTO.getApps();
         boolean base = false;
-        for (AppPreviewDTO appDTO : appsDTOList) {
+        for (AppDTO appDTO : appsDTOList) {
             if (appDTO.getAppid() >= 1263200) {
                 base = true;
                 continue;
@@ -61,9 +58,9 @@ public class SteamRepository {
         }
     }
 
-    public static AppPreviewsDTO getAppList() throws SQLException {
+    public static AppListResponse getAppList() throws SQLException {
         Connection conn = DBUtil.getConnection();
-        String query = "select steam_appid, name from steam_games where type=?";
+        String query = "select steam_appid, name, price, header_image from steam_games where type=?";
         PreparedStatement preparedStatement = conn.prepareStatement(query);
 
         preparedStatement.setString(1, "game");
@@ -73,10 +70,12 @@ public class SteamRepository {
         while (rs.next()) {
             Long steam_appid = rs.getLong("steam_appid");
             String name = rs.getString("name");
-            appPreviewDTOList.add(new AppPreviewDTO(steam_appid, name));
+            int price = rs.getInt("price");
+            String header_image = rs.getString("header_image");
+            appPreviewDTOList.add(new AppPreviewDTO(steam_appid, name, price, header_image));
         }
 
-        return new AppPreviewsDTO(appPreviewDTOList);
+        return new AppListResponse(appPreviewDTOList);
     }
 
     public static AppDetailDTO getAppDetail(Long appId) throws SQLException{

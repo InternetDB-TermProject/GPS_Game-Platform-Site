@@ -7,9 +7,10 @@ body {background-color: #d0d8e2;}
    #freeArea {position: absolute; top: 1400px; left: 45px; width: 210px; height: 60px; border-bottom-style: solid; border-bottom-width: 5px;}
    #freeTagCard {position: absolute; top: 1500px; left: 45px; width: 100%;}
    #famousArea {position: absolute; top: 730px; left: 45px; width: 210px; height: 60px; border-bottom-style: solid; border-bottom-width: 5px;}
-   #famousTagCard {position: absolute; top: 800px; left: 45px; width: 100%;}
-   .card {display: inline-block; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); max-width: 300px; text-align: center; font-family: arial; margin-right: 1%; margin-left: 3%;}
-   .cardImageArea {width: 289px; height: 345px;}
+   #famousTagCard {position: relative; top: 800px; left: 45px; width: 100%;}
+   .card {display: inline-block; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); max-width: 460px; text-align: center; font-family: arial; margin-right: 1%; margin-left: 3%;}
+   .cardImageArea {overflow: hidden; position:relative; width: 460px; height: 215px;}
+   .cardImageArea img {position: absolute; top: 0;left: 0; height: 100%; width: 120%;}
    .cardImageArea:hover {animation-name: chooseCard; animation-duration: 0.7s; animation-fill-mode: forwards;}
    @keyframes chooseCard {0% {background-color: rgba(72,209,204,0);} 100%{background-color: rgba(72,209,204,0.7);}}
    .price {color: grey; font-size: 22px;}
