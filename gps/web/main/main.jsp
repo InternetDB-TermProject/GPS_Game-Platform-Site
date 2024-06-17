@@ -16,9 +16,7 @@
 <link rel="stylesheet" href="../resources/css/header.css">
 <script type="text/javascript" src="./MainHeader.js"></script>
 </head>
-<!--<%   
-   String email = (String)request.getAttribute("email"); 
-%> -->
+
 <body>
 <form>
 <div id="header">

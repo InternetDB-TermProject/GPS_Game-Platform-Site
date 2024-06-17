@@ -17,7 +17,7 @@
 <title>로그인</title>
 </head>
 <body>
-<form action="LoginCheck.sign" method="post">
+<form action="./login-process.jsp" method="post">
 	<div id="imgArea">
 		<img src="../resources/image/Alogo.png" alt="이미지 없음" width="100" height="100">
 		<div id="loginBack">
@@ -30,14 +30,5 @@
 		</div>
 	</div>
 </form>
-	<% if(email != null) { %>
-		<script type="text/javascript">
-			let d = document.querySelector("#putId");
-			var valueEmail = "<%=email%>";
-			d.value = valueEmail;
-		</script>
-<%
-	}
-%>
 </body>
 </html>
