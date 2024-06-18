@@ -10,7 +10,7 @@
 <meta charset="UTF-8">
 <title>회원가입</title>
 </head>
-<body>s
+<body>
 <form action="./signup-process.jsp" method="post">
 	<div id="signupArea">
 		<div id="logoHeader">
