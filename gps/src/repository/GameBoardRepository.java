@@ -12,7 +12,7 @@ import java.util.List;
 public class GameBoardRepository {
     public static GameBoardResponse getGameBoardList() throws SQLException {
         Connection conn = DBUtil.getConnection();
-        String query = "select gameId, title, text, writer, gameBoardView, create_date from game_board where type=? order by create_date desc";
+        String query = "select gameId, title, text, writer, gameBoardView, create_date from game_board order by create_date desc";
         PreparedStatement preparedStatement = conn.prepareStatement(query);
 
         preparedStatement.setString(1, "game");
