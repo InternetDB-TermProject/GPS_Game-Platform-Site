@@ -1,5 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page import="payload.dto.GameBoardViewDTO" %>
+<%@ page import="payload.dto.SteamAppsResponse" %>
+<%@ page import="payload.response.GameBoardResponse" %>
+<%@ page import="repository.GameBoardRepository" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix ="c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix ="fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>  
 <%--<%@page import="board.BoardDto"%>--%>
@@ -8,6 +11,7 @@
 	//세션으로 로그인된 회원 정보 가져오기
     String email = (String)session.getAttribute("email"); 
 
+	List<GameBoardViewDTO> apps = GameBoardRepository.getGameBoardList().getGameBoardPriviewDTOList();
 %>    
     
 <!DOCTYPE html>
