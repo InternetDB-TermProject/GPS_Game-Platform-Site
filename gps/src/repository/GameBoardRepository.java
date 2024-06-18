@@ -6,6 +6,7 @@ import payload.response.AppListResponse;
 import payload.response.GameBoardResponse;
 import util.DBUtil;
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,6 +31,24 @@ public class GameBoardRepository {
         }
 
         return new GameBoardResponse(gameBoardViewDTOList);
+    }
+
+    public static void insertGame(GameBoardViewDTO request) throws SQLException{
+        Connection conn = DBUtil.getConnection();
+
+        String query = "insert into game_board(gameId, title, text, writer, gameBoardView, create_date) " +
+                "values (?, ?, ?, ?, ?, ?)";
+
+        PreparedStatement preparedStatement = conn.prepareStatement(query);
+
+        preparedStatement.setNull(1, Types.BIGINT);
+        preparedStatement.setString(2, request.getTitle());
+        preparedStatement.setString(3, request.getText());
+        preparedStatement.setString(4, request.getWriter());
+        preparedStatement.setInt(5, request.getGameBoardView());
+        preparedStatement.setDate(6, Date.valueOf(LocalDate.now()));
+        preparedStatement.executeUpdate();
+
     }
 
 }
