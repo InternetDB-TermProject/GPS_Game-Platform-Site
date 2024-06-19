@@ -58,6 +58,37 @@ public class GameBoardRepository {
 
     }
 
+    public static void updateGame(GameBoardViewDTO request) throws SQLException{
+        Connection conn = DBUtil.getConnection();
+
+        String query = "update game_board set title=?, text=?, gameBoardView=?, create_date=?) " +
+                "where gameId=?";
+
+
+        PreparedStatement preparedStatement = conn.prepareStatement(query);
+
+        preparedStatement.setString(1, request.getTitle());
+        preparedStatement.setString(2, request.getText());
+        preparedStatement.setInt(3, request.getGameBoardView());
+        preparedStatement.setDate(4, Date.valueOf(LocalDate.now()));
+        preparedStatement.setLong(5, request.getGameId());
+        preparedStatement.executeUpdate();
+        System.out.println(query);
+    }
+
+    public static void deleteGame(Long gameId) throws SQLException{
+        Connection conn = DBUtil.getConnection();
+
+        String query = "delete from game_board where gameId=?";
+
+
+        PreparedStatement preparedStatement = conn.prepareStatement(query);
+
+        preparedStatement.setLong(1, gameId);
+        preparedStatement.executeUpdate();
+        System.out.println(query);
+    }
+
     public static GameBoardDetailDTO getAppDetail(Long ParamgameId) throws SQLException{
         Connection conn = DBUtil.getConnection();
         String query = "select * from game_board where gameId=?";
