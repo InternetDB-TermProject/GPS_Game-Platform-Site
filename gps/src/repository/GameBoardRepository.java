@@ -1,6 +1,8 @@
 package repository;
 
+import payload.dto.AppDetailDTO;
 import payload.dto.AppPreviewDTO;
+import payload.dto.GameBoardDetailDTO;
 import payload.dto.GameBoardViewDTO;
 import payload.response.AppListResponse;
 import payload.response.GameBoardResponse;
@@ -36,8 +38,12 @@ public class GameBoardRepository {
     public static void insertGame(GameBoardViewDTO request) throws SQLException{
         Connection conn = DBUtil.getConnection();
 
+        System.out.println(request.getTitle());
+        System.out.println(request.getText());
+        System.out.println(request.getWriter());
         String query = "insert into game_board(gameId, title, text, writer, gameBoardView, create_date) " +
                 "values (?, ?, ?, ?, ?, ?)";
+
 
         PreparedStatement preparedStatement = conn.prepareStatement(query);
 
@@ -48,7 +54,31 @@ public class GameBoardRepository {
         preparedStatement.setInt(5, request.getGameBoardView());
         preparedStatement.setDate(6, Date.valueOf(LocalDate.now()));
         preparedStatement.executeUpdate();
+        System.out.println(query);
 
+    }
+
+    public static GameBoardDetailDTO getAppDetail(Long ParamgameId) throws SQLException{
+        Connection conn = DBUtil.getConnection();
+        String query = "select * from game_board where gameId=?";
+        PreparedStatement preparedStatement = conn.prepareStatement(query);
+
+        preparedStatement.setLong(1, ParamgameId);
+        ResultSet rs =preparedStatement.executeQuery();
+
+        GameBoardDetailDTO result = null;
+        while (rs.next()) {
+            Long gameId = rs.getLong("gameId");
+            String title = rs.getString("title");
+            String text = rs.getString("text");
+            String writer = rs.getString("writer");
+            int gameBoardView = rs.getInt("gameBoardView");
+            Date create_date = rs.getDate("create_date");
+
+            result = new GameBoardDetailDTO(gameId, title, text, writer, gameBoardView, create_date);
+        }
+
+        return result;
     }
 
 }

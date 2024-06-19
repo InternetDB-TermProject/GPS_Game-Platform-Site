@@ -3,6 +3,7 @@
   <component name="WebContextManager">
     <option name="state">
       <map>
+        <entry key="file://$PROJECT_DIR$/web/gameBoard/gameBoardWriteProcess.jsp" value="file://$PROJECT_DIR$/web/gameBoard" />
         <entry key="file://$PROJECT_DIR$/web/profile/profilemodify.jsp" value="file://$PROJECT_DIR$/web/profile" />
       </map>
     </option>

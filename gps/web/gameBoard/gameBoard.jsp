@@ -75,10 +75,10 @@
 			<%
 				for (GameBoardViewDTO app : apps){
 			%>
-				<tr onClick="location.href='./gameBoardView.make?mnum=${dto.mnum}'">
+				<tr onClick="location.href='./gameBoardView.jsp?gameId=<%=app.getGameId()%>'">
 					<td><%=app.getGameId()%></td>
 					<td><%=app.getTitle()%></td>
-					<td><%=app.getText()%></td>
+					<td><%=app.getWriter()%></td>
 					<td><%=app.getCreate_date()%></td>
 					<td><%=app.getGameBoardView()%></td>
 				</tr>

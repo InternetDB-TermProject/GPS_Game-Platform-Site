@@ -72,22 +72,13 @@
 			</tr>
 		</thead>
 		<tbody>
-<%--			<c:forEach var='dto' items='${dtos}'>--%>
-<%--				<tr onClick="location.href='./gameBoardView.make?mnum=${dto.mnum}'">--%>
-<%--					<td>${dto.mnum}</td>--%>
-<%--					<td>${dto.mtitle}</td>--%>
-<%--					<td>${dto.mwriter}</td>--%>
-<%--					<td><fmt:formatDate value="${dto.mdate}"/></td>--%>
-<%--					<td>${dto.mview}</td>--%>
-<%--				</tr>--%>
-<%--			</c:forEach>--%>
 			<%
 				for (GameBoardViewDTO app : apps){
 			%>
-				<tr onClick="location.href='./gameBoardView.make?mnum=${dto.mnum}'">
+				<tr onClick="location.href='./gameBoardView.jsp?gameId=<%=app.getGameId()%>'">
 					<td><%=app.getGameId()%></td>
 					<td><%=app.getTitle()%></td>
-					<td><%=app.getText()%></td>
+					<td><%=app.getWriter()%></td>
 					<td><%=app.getCreate_date()%></td>
 					<td><%=app.getGameBoardView()%></td>
 				</tr>

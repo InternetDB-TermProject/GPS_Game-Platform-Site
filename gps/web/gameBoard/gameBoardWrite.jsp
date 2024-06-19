@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <% 
 	request.setCharacterEncoding("utf-8");
-    String email = (String)session.getAttribute("email");  
+	String email = (String) session.getAttribute("username");
 %>
 <!DOCTYPE html>
 <html>
@@ -16,13 +16,13 @@
 	<div id="header">
 	  <a href="../main/main.jsp"><img src="../resources/image/Alogo.png" width=70px height=70px></a><h2>| Board</h2>
 	</div>
-	<form action="./mBInsert.jsp" method="post" enctype = "multipart/form-data">
+	<form action="./gameBoardWriteProcess.jsp" method="post" enctype = "multipart/form-data">
 		<h1 class="ins" id="insInfo">게임 게시판 > 글쓰기</h1><h3 id="nickname" class="ins">닉네임 : <span id="vwName"><%= email %></span></h3>
 		<div id="insertForm" class="ins">
-			<input type="text" placeholder="제목" name="mtitle" class="input" id="intitle">
+			<input type="text" placeholder="제목" name="title" id="title" class="input" required>
 			<hr>
-			<input type="text" placeholder="내용" name="mtag" class="input" id="intag">
-			<input type="file" class="form-control" id="filename" name="filename" multiple required>
+<%--			<input type="text" placeholder="내용" name="mtag" class="input" id="intag">--%>
+			<input type="file" class="form-control" id="text" name="text" multiple required>
 			<button type = "submit" class="btn" id="write">작성</button></a>
 			<button class="btn" id="cancel">취소</button>
 		</div>
