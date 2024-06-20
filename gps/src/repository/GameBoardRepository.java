@@ -1,11 +1,9 @@
 package repository;
 
-import payload.dto.AppDetailDTO;
-import payload.dto.AppPreviewDTO;
 import payload.dto.GameBoardDetailDTO;
 import payload.dto.GameBoardViewDTO;
-import payload.response.AppListResponse;
 import payload.response.GameBoardResponse;
+import payload.response.GameBoardViewResponse;
 import util.DBUtil;
 import java.sql.*;
 import java.time.LocalDate;
@@ -15,7 +13,7 @@ import java.util.List;
 public class GameBoardRepository {
     public static GameBoardResponse getGameBoardList() throws SQLException {
         Connection conn = DBUtil.getConnection();
-        String query = "select gameId, title, text, writer, gameBoardView, create_date from game_board order by create_date desc";
+        String query = "select gameId, title, text, writer, gameBoardView, create_date from game_board order by gameId desc";
         PreparedStatement preparedStatement = conn.prepareStatement(query);
 
         preparedStatement.setString(1, "game");
@@ -61,7 +59,7 @@ public class GameBoardRepository {
     public static void updateGame(GameBoardViewDTO request) throws SQLException{
         Connection conn = DBUtil.getConnection();
 
-        String query = "update game_board set title=?, text=?, gameBoardView=?, create_date=?) " +
+        String query = "update game_board set title=?, text=?, gameBoardView=?, create_date=? " +
                 "where gameId=?";
 
 
@@ -76,17 +74,17 @@ public class GameBoardRepository {
         System.out.println(query);
     }
 
-    public static void deleteGame(Long gameId) throws SQLException{
+    public static GameBoardViewResponse deleteGame(Long gameId) throws SQLException{
         Connection conn = DBUtil.getConnection();
 
         String query = "delete from game_board where gameId=?";
-
 
         PreparedStatement preparedStatement = conn.prepareStatement(query);
 
         preparedStatement.setLong(1, gameId);
         preparedStatement.executeUpdate();
         System.out.println(query);
+        return new GameBoardViewResponse(true, gameId);
     }
 
     public static GameBoardDetailDTO getAppDetail(Long ParamgameId) throws SQLException{

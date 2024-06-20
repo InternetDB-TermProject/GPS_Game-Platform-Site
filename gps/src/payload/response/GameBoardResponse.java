@@ -8,6 +8,8 @@ import java.util.Date;
 
 public class GameBoardResponse {
 
+
+
     List<GameBoardViewDTO> gameBoardPriviewDTOList;
 
     public GameBoardResponse(List<GameBoardViewDTO> gameBoardPriviewDTOList) {

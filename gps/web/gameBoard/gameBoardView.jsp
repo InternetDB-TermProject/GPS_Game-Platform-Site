@@ -1,8 +1,4 @@
-<%@ page import="payload.dto.GameBoardViewDTO" %>
-<%@ page import="payload.dto.SteamAppsResponse" %>
-<%@ page import="payload.response.GameBoardResponse" %>
 <%@ page import="repository.GameBoardRepository" %>
-<%@ page import="java.util.List" %>
 <%@ page import="payload.dto.GameBoardDetailDTO" %>
 <%@ taglib prefix ="c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix ="fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
@@ -45,6 +41,7 @@
         <h3 id="mdate">작성일 : <%=apps.getCreate_date()%> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 조회수 : <%=apps.getGameBoardView()%> </h3>
         <hr>
       <button onClick="location.href='./gameBoardUpdate.jsp?gameId=<%=apps.getGameId()%>'" class="btn" id="write">수정</button>
+       <button onClick="location.href='./gameBoardDeleteProcess.jsp?gameId=<%=apps.getGameId()%>'" class="btn" id="delete">삭제</button>
       <a href="./gameBoard.jsp"><button class="btn" id="cancel">돌아가기</button></a>
    </div>
    			<section>
