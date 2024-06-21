@@ -1,13 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page import="payload.dto.GameBoardViewDTO" %>
+<%@ page import="payload.dto.SteamAppsResponse" %>
+<%@ page import="payload.response.GameBoardResponse" %>
+<%@ page import="repository.GameBoardRepository" %>
+<%@ page import="java.util.List" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix ="c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix ="fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>  
 <%--<%@page import="board.BoardDto"%>--%>
 <%--<%@page import="board.BoardDao"%>--%>
 <%
 	//세션으로 로그인된 회원 정보 가져오기
-    String email = (String)session.getAttribute("email"); 
+    String email = (String)session.getAttribute("email");
 
+	List<GameBoardViewDTO> apps = GameBoardRepository.getGameBoardList().getGameBoardPriviewDTOList();
 %>    
     
 <!DOCTYPE html>
@@ -67,15 +72,17 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var='dto' items='${dtos}'>
-				<tr onClick="location.href='./gameBoardView.make?mnum=${dto.mnum}'">
-					<td>${dto.mnum}</td>
-					<td>${dto.mtitle}</td>
-					<td>${dto.mwriter}</td>
-					<td><fmt:formatDate value="${dto.mdate}"/></td>
-					<td>${dto.mview}</td>
+			<%
+				for (GameBoardViewDTO app : apps){
+			%>
+				<tr onClick="location.href='./gameBoardView.jsp?gameId=<%=app.getGameId()%>'">
+					<td><%=app.getGameId()%></td>
+					<td><%=app.getTitle()%></td>
+					<td><%=app.getWriter()%></td>
+					<td><%=app.getCreate_date()%></td>
+					<td><%=app.getGameBoardView()%></td>
 				</tr>
-			</c:forEach>
+			<%}%>
 		</tbody>
 	</table>
 	</div>

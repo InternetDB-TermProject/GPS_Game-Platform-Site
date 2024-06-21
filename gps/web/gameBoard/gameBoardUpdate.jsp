@@ -1,5 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="repository.GameBoardRepository" %>
+<%@ page import="payload.dto.GameBoardDetailDTO" %>
+
+<%
+	long gameId = Integer.parseInt(request.getParameter("gameId"));
+
+	GameBoardDetailDTO apps = GameBoardRepository.getAppDetail(gameId);
+
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,17 +23,18 @@
 	  <a href="../main/main.jsp"><img src="../resources/image/Alogo.png" width=70px height=70px></a><h2>| Board</h2>
 	</div>
 	
-	<form action="./gameBUpdate.jsp?mnum=${dto.mnum}" method="post">
-		<h1 class="ins" id="insInfo">글 수정하기</h1><h3 id="nickname" class="ins">닉네임 : <span id="vwName">${dto.mwriter}</span></h3>
+	<form action="./gameBoardUpdateProcess.jsp?gameId=<%=apps.getGameId()%>" method="post" enctype="multipart/form-data">>
+		<h1 class="ins" id="insInfo">글 수정하기</h1><h3 id="nickname" class="ins">닉네임 : <span id="vwName"><%=apps.getWriter()%></span></h3>
 		<div id="insertForm" class="ins">
-			<input type="text" value="${dto.mtitle}" name="mtitle" class="input" id="intitle">
+			<h2> 제목 </h2>
+			<input type="text" value="<%=apps.getTitle()%>" name="title" class="input" id="title">
 			<hr>
-			<input type="text" value="${dto.mtag}" name="btag" class="input" id="intag">
-			<input type="file" class="form-control" id="filename" name="filename" value="game/${dto.mfile }">
+			<b> 현재 파일 : <%=apps.getText()%></b>
+			<input type="file" class="form-control" id="text" name="text"  multiple required>
 			<button type = "submit" class="btn" id="update">수정</button></a>
 		</div>
 	</form>
 	
-	<button onClick="location.href='./gameBoardView.jsp?mnum=${dto.mnum}'" class="btn" id="cancel">취소</button>
+	<button onClick="location.href='./gameBoardView.jsp?gameId=<%=apps.getGameId()%>'" class="btn" id="cancel">취소</button>
 </body>
 </html>
